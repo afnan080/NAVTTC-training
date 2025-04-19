@@ -1,3 +1,4 @@
+//new version
 :root {
     --primary-color: #4CAF50;
     --primary-hover: #45a049;
@@ -5,6 +6,7 @@
     --text-color: #333;
     --form-bg: #fff;
     --border-color: #ccc;
+    --input-border-color: #aaa;
 }
 
 * {
@@ -16,12 +18,12 @@
 body {
     font-family: Arial, sans-serif;
     background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 h2 {
     text-align: center;
     margin-top: 30px;
-    color: var(--text-color);
 }
 
 form {
@@ -50,22 +52,21 @@ label {
     display: block;
     margin-top: 15px;
     font-weight: 600;
-    color: var(--text-color);
 }
 
 input[type="text"],
 input[type="email"],
 input[type="date"],
 input[type="tel"],
+input[type="file"],
 select,
-textarea,
-input[type="file"] {
+textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #aaa;
+    border: 1px solid var(--input-border-color);
     border-radius: 5px;
-    transition: 0.3s;
+    transition: border-color 0.3s ease;
 }
 
 input:focus,
@@ -88,6 +89,7 @@ textarea:focus {
     display: flex;
     align-items: center;
     gap: 5px;
+    margin-top: 0; /* ensures alignment */
 }
 
 input[type="submit"] {
@@ -109,6 +111,7 @@ input[type="submit"]:hover {
 
 textarea {
     resize: vertical;
+    min-height: 100px;
 }
 
 @media (max-width: 600px) {
